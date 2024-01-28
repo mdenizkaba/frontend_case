@@ -1,6 +1,7 @@
 import Header from "../sections/Header";
 import Hero from "../sections/Hero";
 import BestOfBest from "../sections/BestOfBest";
+import JoinUs from "../sections/JoinUs";
 import { Icon1,Icon2,Icon3 } from "../icons/HeroIconList";
 
 const links = [
@@ -74,7 +75,7 @@ export default function Home() {
       <Header links={links}/>
       <Hero data={heroData}/>
       <BestOfBest data={bestOfBestData}/>
-      
+      <JoinUs/>
 
       <div className="h-[500px]"></div>
     </main>
