@@ -42,7 +42,6 @@ const BestOfBest = ({data}) => {
 				</div>
 			</Container>
 			<Container>
-				
 				<div className="grid grid-cols-3 gap-12 z-10 relative">
 					{data.items.map((item, index) => (
 						<Card item={item} key={index}/>
