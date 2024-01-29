@@ -4,6 +4,7 @@ import BestOfBest from "../sections/BestOfBest";
 import JoinUs from "../sections/JoinUs";
 import LoveUs from "../sections/LoveUs";
 import Collection from "../sections/Collection";
+import Collected from "../sections/Collected";
 import { Icon1,Icon2,Icon3,Icon4,Icon5,Icon6,Icon7,Icon8,Icon9 } from "../icons/HeroIconList";
 
 const links = [
@@ -170,7 +171,7 @@ export default function Home() {
       <JoinUs data={joinUsData}/>
       <LoveUs data={LoveData}/>
       <Collection data={collectionData}/>
-
+      <Collected/>
       <div className="h-[500px]"></div>
     </main>
   );

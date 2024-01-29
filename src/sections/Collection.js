@@ -23,14 +23,13 @@ const Window = ({image,style}) => {
 
 const Collecton = ({data}) => {
   return (
-    <section className="py-20">
+    <section className="pt-20 pb-40">
       <Container>
           <div className="text-slate-900 text-[56px] font-extrabold">{data.title}</div>
           <div className="text-slate-600 text-lg font-normal mt-9 tracking-wide">{data.desc}</div>
         <Tab.Group className={'pt-20'}>
           <div className="flex-1 flex-row grid grid-cols-12 gap-20">
             <Tab.List className={"flex col-span-3 flex-col flex-start gap-4"}>
-
               {
                 data.items.map((item,index) => (
                   <Tab className={"outline-none "} key={index}>
@@ -49,9 +48,7 @@ const Collecton = ({data}) => {
                 ))
               }
             </Tab.List>
-
             <Tab.Panels className={"col-span-9"} >
-
             {
                 data.items.map((item,index) => (
                   <Tab.Panel key={index}>
@@ -68,16 +65,9 @@ const Collecton = ({data}) => {
                   </Tab.Panel>
                 ))
               }
-
-              
-
-
-
             </Tab.Panels>
             </div>
           </Tab.Group>
-         
-         
       </Container>
      </section>
   );
