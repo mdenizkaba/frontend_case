@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(roboto.className,'bg-amber-50')}>{children}</body>
+      <body className={clsx(roboto.className,'bg-[#fefcf2]')}>{children}</body>
     </html>
   );
 }

@@ -3,7 +3,8 @@ import Hero from "../sections/Hero";
 import BestOfBest from "../sections/BestOfBest";
 import JoinUs from "../sections/JoinUs";
 import LoveUs from "../sections/LoveUs";
-import { Icon1,Icon2,Icon3 } from "../icons/HeroIconList";
+import Collection from "../sections/Collection";
+import { Icon1,Icon2,Icon3,Icon4,Icon5,Icon6,Icon7,Icon8,Icon9 } from "../icons/HeroIconList";
 
 const links = [
 	{
@@ -121,6 +122,45 @@ const LoveData = {
     },
   ]
 }
+
+const collectionData = {
+  title:'Grow your collection',
+  desc:'Enim neque massa porta adipiscing elit. Sem libero id faucibus nibh amet dictum pellentesque sed. Eu non turpis risus odio sapien, fames sit rhoncus. Nec magna sed interdum sit purus tellus. Et volutpat proin neque placerat at bibendum quam tellus.',
+  items:[
+    {
+      icon:<Icon4/>,
+      name:'Bibendum tellus',
+      images:['./images/collection1.png','./images/collection2.png','./images/collection3.png'],
+    },
+    {
+      icon:<Icon5/>,
+      name:'Cras eget',
+      images:['./images/collection2.png','./images/collection1.png','./images/collection3.png'],
+    },
+    {
+      icon:<Icon6/>,
+      name:'Dolor pharetra',
+      images:['./images/collection3.png','./images/collection1.png','./images/collection2.png'],
+    },
+    {
+      icon:<Icon7/>,
+      name:'Amet, fringilla',
+      images:['./images/collection1.png','./images/collection2.png','./images/collection3.png'],
+    },
+    {
+      icon:<Icon8/>,
+      name:'Amet nibh',
+      images:['./images/collection1.png','./images/collection2.png','./images/collection3.png'],
+    },
+    {
+      icon:<Icon9/>,
+      name:'Sed velit',
+      images:['./images/collection1.png','./images/collection2.png','./images/collection3.png'],
+    },
+    
+  ]
+}
+
 export default function Home() {
   return (
     <main className="text-lg">
@@ -129,6 +169,7 @@ export default function Home() {
       <BestOfBest data={bestOfBestData}/>
       <JoinUs data={joinUsData}/>
       <LoveUs data={LoveData}/>
+      <Collection data={collectionData}/>
 
       <div className="h-[500px]"></div>
     </main>
