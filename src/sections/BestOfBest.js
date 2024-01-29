@@ -47,7 +47,6 @@ const BestOfBest = ({data}) => {
 						<Card item={item} key={index}/>
 					))}
 				</div>
-
 				<AnimatedArea/>
 			</Container>
 		</div>

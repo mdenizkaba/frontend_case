@@ -56,9 +56,7 @@ const Footer = ({data}) => {
         </Container>
       </div>
       <div className="py-9 container mx-auto border-t border-slate-700 flex justify-between">
-      
-      <div className="text-white text-base font-normal">Collers @ 2023. All rights reserved.</div>
-      <div>
+        <div className="text-white text-base font-normal">Collers @ 2023. All rights reserved.</div>
         <div className="flex gap-8">
           <a href="#" className="text-white text-base font-normal">Terms</a>
           <a href="#" className="text-white text-base font-normal">Privacy</a>
@@ -68,8 +66,6 @@ const Footer = ({data}) => {
           </div>
         </div>
       </div>
-      </div>
-      
     </footer>
   );
 }
