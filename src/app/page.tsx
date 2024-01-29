@@ -5,7 +5,8 @@ import JoinUs from "../sections/JoinUs";
 import LoveUs from "../sections/LoveUs";
 import Collection from "../sections/Collection";
 import Collected from "../sections/Collected";
-import { Icon1,Icon2,Icon3,Icon4,Icon5,Icon6,Icon7,Icon8,Icon9 } from "../icons/HeroIconList";
+import Footer from "../sections/Footer";
+import { Icon1,Icon2,Icon3,Icon4,Icon5,Icon6,Icon7,Icon8,Icon9,Facebook,Youtube,Twitter,Instagram,Linkedin } from "../icons/HeroIconList";
 
 const links = [
 	{
@@ -162,6 +163,106 @@ const collectionData = {
   ]
 }
 
+const footerData = {
+  product:{
+    title:'Product',
+    links:[
+      {
+        name:'Pricing',
+        url:'/'
+      },
+      {
+        name:'Overview',
+        url:'/'
+      },
+      {
+        name:'Browse',
+        url:'/'
+      },
+      {
+        name:'Accessibility',
+        url:'/'
+      },
+      {
+        name:'Five',
+        url:'/'
+      },
+    ]
+  },
+  solutions:{
+    title:'Solutions',
+    links:[
+      {
+        name:'Brainstorming',
+        url:'/'
+      },
+      {
+        name:'Ideation',
+        url:'/'
+      },
+      {
+        name:'Wireframing',
+        url:'/'
+      },
+      {
+        name:'Research',
+        url:'/'
+      },
+      {
+        name:'Design',
+        url:'/'
+      },
+    ]
+  },
+  support:{
+    title:'Support',
+    links:[
+      {
+        name:'Contact Us',
+        url:'/'
+      },
+      {
+        name:'Developers',
+        url:'/'
+      },
+      {
+        name:'Documentation',
+        url:'/'
+      },
+      {
+        name:'Integrations',
+        url:'/'
+      },
+      {
+        name:'Reports',
+        url:'/'
+      },
+    ]
+  },
+  followUs:[
+    {
+      icon:<Youtube/>,
+      url:'/'
+    },
+    {
+      icon:<Facebook/>,
+      url:'/'
+    },
+    {
+      icon:<Twitter/>,
+      url:'/'
+    },
+    {
+      icon:<Instagram/>,
+      url:'/'
+    },
+    {
+      icon:<Linkedin/>,
+      url:'/'
+    },
+  ],
+}
+
 export default function Home() {
   return (
     <main className="text-lg">
@@ -172,7 +273,7 @@ export default function Home() {
       <LoveUs data={LoveData}/>
       <Collection data={collectionData}/>
       <Collected/>
-      <div className="h-[500px]"></div>
+      <Footer data={footerData}/>
     </main>
   );
 }
