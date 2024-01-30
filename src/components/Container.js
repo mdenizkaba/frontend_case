@@ -1,6 +1,6 @@
 const Container = ({children})=>{
     return (
-        <div className="container mx-auto relative">
+        <div className="container mx-auto relative px-4">
             {children}
         </div>
     )

@@ -10,21 +10,24 @@ register();
 
 const getContainer = () => {
 	let width = 0;
-	if (window.innerWidth <= 640) width = 320;
-	else if (window.innerWidth <= 768) width = 640;
-	else if (window.innerWidth <= 1024) width = 768;
-	else if (window.innerWidth <= 1280) width = 1024;
-	else if (window.innerWidth <= 1536) width = 1280;
+	if (window?.innerWidth <= 640) width = 320*2;
+	else if (window?.innerWidth <= 768) width = 640;
+	else if (window?.innerWidth <= 1024) width = 768;
+	else if (window?.innerWidth <= 1280) width = 1024;
+	else if (window?.innerWidth <= 1536) width = 1280;
 	else width = 1536;
 	return (window.innerWidth-width)/4;
 };
 
 const breakpoints= {
+	320: {
+		slidesPerView: 1.3,
+	},
 	640: {
-		slidesPerView: 1,
+		slidesPerView: 1.5,
 	},
 	768: {
-		slidesPerView: 1,
+		slidesPerView: 2.5,
 	},
 	1024: {
 		slidesPerView: 3.8,
@@ -33,17 +36,17 @@ const breakpoints= {
 
 const Card = ({logo,text,image,name,tag}) => {
 	return(
-		<div className="bg-white shadow-lg w-full rounded-3xl p-8 mb-5 flex flex-col gap-4">
-			<img src={logo} alt="loveus" className="w-[133px] h-8 my-4 object-contain"/>
-			<span className="text-2xl	font-normal leading-relaxed h-[195px] overflow-hidden" >{text}</span>
+		<div className="bg-white shadow-lg w-full rounded-3xl sm:p-8 p-5 mb-5 flex flex-col gap-4">
+			<img src={logo} alt="loveus" className="w-[133px] h-8 sm:my-4 my-2 object-contain"/>
+			<span className="sm:text-2xl text-base	font-normal leading-relaxed sm:h-[195px] sm:max-h-auto max-h-[100px] overflow-hidden" >{text}</span>
 			<div className="flex items-center gap-4 mt-4">
 
-				<div className="w-16 h-16 bg-black rounded-full overflow-hidden  ">
+				<div className="sm:w-16 sm:h-16 w-10 h-10 bg-black rounded-full overflow-hidden  ">
 					<img src={image} alt="loveus" className="w-full h-full object-cover"/>
 				</div>
 				<div className="flex flex-col flex-start text-left">
-					<span className="text-lg font-normal text-black">{name}</span>
-					<span className="text-base font-normal text-slate-600">{tag}</span>
+					<span className="sm:text-lg text-base font-normal text-black">{name}</span>
+					<span className="sm:text-base text-sm font-normal text-slate-600">{tag}</span>
 				</div>
 			</div>
 		</div>
@@ -68,11 +71,11 @@ const LoveUs = ({data}) => {
 	}
 	
 	return(
-		<div className="py-20">
+		<div className="sm:py-20 pt-20 pb-0">
 			<Container>
 				<div className="flex items-center justify-between ">
-					<div className="text-slate-900 text-[56px] font-extrabold">{data.title}</div>
-					<div className="flex gap-6">
+					<div className="sm:text-[56px] text-[32px] sm:text-left text-center w-full font-extrabold pb-1 ">{data.title}</div>
+					<div className="sm:flex hidden gap-6 ">
 						<div className="h-12 w-12 border-2 rounded-full border-amber-900 flex justify-center items-center" onClick={onPrev}>
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M18.5 12H6H18.5ZM6 12L12 6L6 12ZM6 12L12 18Z" fill="#78350F"/>
@@ -89,9 +92,9 @@ const LoveUs = ({data}) => {
 				</div>
 			</Container>
 
-			<div className="relative w-full h-[420px] mt-10" >
-				<div className="absolute top-0 bottom-0 bg-amber-200 " style={{left: size,right:size}} />
-				<div className="pt-10 love-swiper">
+			<div className="relative w-full sm:h-[420px] h-[350px] mt-10" >
+				<div className="absolute top-0 bottom-20 bg-amber-200 " style={{left: size,right:size}} />
+				<div className="sm:pt-10 pt-5 love-swiper">
 					<Swiper
 						ref={swiperRef}
 						centeredSlides={true}

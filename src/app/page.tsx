@@ -10,7 +10,7 @@ import { links, heroData, bestOfBestData, joinUsData, LoveData, collectionData, 
 
 export default function Home() {
   return (
-    <main className="text-lg">
+    <main className="text-lg w-full overflow-x-hidden">
       <Header links={links}/>
       <Hero data={heroData}/>
       <BestOfBest data={bestOfBestData}/>

@@ -6,10 +6,10 @@ const Footer = ({data}) => {
     <footer className="bg-slate-900">
       <div className="py-12">
         <Container>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-4 sm:grid-rows-1 grid-rows-4 gap-12">
             <div>
-              <h4 className="text-white text-base	font-medium	py-3">{data.product.title}</h4>
-              <ul className="text-white text-base font-normal">
+              <h4 className="text-white text-base	font-medium	py-3 sm:text-left text-center">{data.product.title}</h4>
+              <ul className="text-white text-base font-normal sm:text-left text-center">
                 {
                   data.product.links.map((item,i)=>(
                     <li key={i} className="py-3"><a href={item.url}>{item.name}</a></li>
@@ -18,8 +18,8 @@ const Footer = ({data}) => {
               </ul>
             </div>
             <div>
-              <h4 className="text-white text-base	font-medium	py-3">{data.solutions.title}</h4>
-              <ul className="text-white text-base font-normal">
+              <h4 className="text-white text-base	font-medium	py-3 sm:text-left text-center">{data.solutions.title}</h4>
+              <ul className="text-white text-base font-normal sm:text-left text-center">
                 {
                   data.solutions.links.map((item,i)=>(
                     <li key={i} className="py-3"><a href={item.url}>{item.name}</a></li>
@@ -28,8 +28,8 @@ const Footer = ({data}) => {
               </ul>
             </div>
             <div>
-              <h4 className="text-white text-base	font-medium	py-3">{data.support.title}</h4>
-              <ul className="text-white text-base font-normal">
+              <h4 className="text-white text-base	font-medium	py-3 sm:text-left text-center">{data.support.title}</h4>
+              <ul className="text-white text-base font-normal sm:text-left text-center">
                 {
                   data.support.links.map((item,i)=>(
                     <li key={i} className="py-3"><a href={item.url}>{item.name}</a></li>
@@ -38,15 +38,15 @@ const Footer = ({data}) => {
               </ul>
             </div>
             <div>
-              <h4 className="text-white text-base	font-medium	py-3">Get the App</h4>
-              <div className="grid gap-3 py-3">
+              <h4 className="text-white text-base	font-medium	py-3 sm:text-left text-center">Get the App</h4>
+              <div className=" gap-3 py-3 flex flex-col sm:items-start items-center">
                 <Appstore/>
                 <GPlay/>
               </div>
-              <div className="pt-12 text-white text-base font-normal">
+              <div className="pt-12 text-white text-base font-normal sm:text-left text-center">
                 Follow Us
               </div>
-              <div className="flex gap-3 pt-3">
+              <div className="flex gap-3 pt-3 flex flex-row sm:justify-start justify-center">
               {
                   data.followUs.map((item,i)=>item.icon)
                 }
@@ -55,14 +55,14 @@ const Footer = ({data}) => {
           </div>
         </Container>
       </div>
-      <div className="py-9 container mx-auto border-t border-slate-700 flex justify-between">
-        <div className="text-white text-base font-normal">Collers @ 2023. All rights reserved.</div>
+      <div className="py-9 sm:gap-9 gap-6 container mx-auto border-t border-slate-700 flex flext-wrap sm:justify-between justify-center sm:flex-row flex-col items-center">
+        <div className="text-white sm:text-base text-sm  font-normal whitespace-nowrap">Collers @ 2023. All rights reserved.</div>
         <div className="flex gap-8">
-          <a href="#" className="text-white text-base font-normal">Terms</a>
-          <a href="#" className="text-white text-base font-normal">Privacy</a>
-          <a href="#" className="text-white text-base font-normal">Contact</a>
-          <div className="flex gap-2">
-            <Earth/> <div className="text-white text-base font-normal">EN</div>
+          <a href="#" className="text-white sm:text-base text-sm font-normal">Terms</a>
+          <a href="#" className="text-white sm:text-base text-sm font-normal">Privacy</a>
+          <a href="#" className="text-white sm:text-base text-sm font-normal">Contact</a>
+          <div className="flex gap-2 items-center">
+            <Earth/> <div className="text-white sm:text-base text-sm font-normal">EN</div>
           </div>
         </div>
       </div>

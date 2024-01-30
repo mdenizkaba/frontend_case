@@ -33,6 +33,7 @@ const config: Config = {
       },
       boxShadow: {
         '2xl-white': '0 25px 50px -12px rgba(255, 255, 255, 0.15)',
+        'dark': '0 0px 20px -12px rgba(0, 0, 0, 0.7)',
       },
       
     },

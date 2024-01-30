@@ -10,17 +10,17 @@ const Wawes = () => {
 }
 const Collected = () => {
   return (
-    <div className="pb-10 mt-20 bg-amber-900 relative">
+    <div className="sm:pb-10 pb-0 sm:pt-0 pt-10 mt-20 bg-amber-900 relative">
       <Wawes/>
       <Container>
       <div className="min-w-[1049px] mx-auto h-[633px] relative">
         <img src="/images/collectionbg.png" alt="Collected" className="w-full h-full object-contain" />
-        <img src="/images/collectionitem.png" alt="Collected" className="w-80 -top-8  left-28 absolute z-10"/>
+        <img src="/images/collectionitem.png" alt="Collected" className="w-80 sm:-top-8 -top-10 sm:left-28 left-2 absolute z-10"/>
       </div>
       <div className="flex flex-col items-center justify-center absolute top-0 left-0 right-0 bottom-0">
-        <div className="flex flex-col items-center justify-center gap-10 -mt-2">
-          <div className="text-8xl font-extrabold text-white text-center">11,658,467</div>
-          <div className="text-[56px] font-extrabold text-white text-center">Shoes Collected</div>
+        <div className="flex flex-col items-center justify-center sm:gap-10 gap-2 sm:-mt-2 mt-4">
+          <div className="sm:text-8xl text-5xl font-extrabold text-white text-center">11,658,467</div>
+          <div className="sm:text-[56px] text-3xl font-extrabold text-white text-center">Shoes Collected</div>
         </div>
       </div>
       </Container>

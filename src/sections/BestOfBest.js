@@ -20,14 +20,14 @@ const Card = ({item}) => {
 	)
 }
 
-const AnimatedArea = ({children}) => {
+const AnimatedArea = () => {
 	return(
 		<div className="absolute -top-8 -left-8 -right-8 -bottom-8 -z-0 ">
-			<div className="w-[271px] h-[271px] bg-pink-700 absolute bottom-16 rounded-[50px] animate-hero animation-delay-300" />
-			<div className="w-[161px] h-[161px] bg-sky-700 absolute top-0 left-1/3 rounded-[50px] animate-horizontal " />
+			<div className="w-[271px] h-[271px] bg-pink-700 absolute lg:bottom-16 bottom-1/3 rounded-[50px] animate-hero animation-delay-300" />
+			<div className="w-[161px] h-[161px] bg-sky-700 absolute top-0 md:left-1/3 rounded-[50px] animate-horizontal " />
 			<div className="w-[130px] h-[130px] bg-amber-700 absolute bottom-20 right-1/3 mr-4 rounded-[30px] animate-hero animation-delay-1000" />
 			<div className="w-[202px] h-[202px] bg-fuchsia-700 absolute bottom-0 right-20 mr-4 rounded-[30px] animate-horizontal" />
-			<div className="w-[232px] h-[232px] bg-green-700 absolute top-16 right-0 rounded-[50px] animate-hero animation-delay-2000" />
+			<div className="w-[232px] h-[232px] bg-green-700 absolute lg:top-16 top-60  right-0 rounded-[50px] animate-hero animation-delay-2000" />
 		</div>
 	)
 }
@@ -36,13 +36,13 @@ const BestOfBest = ({data}) => {
 	return(
 		<div className="bg-slate-900 py-20">
 			<Container>
-				<div className="flex items-center justify-between pb-20">
-					<div className="text-white text-[56px] font-extrabold">{data.title}</div>
+				<div className="flex items-center justify-between pb-20 lg:flex-row flex-col">
+					<div className="text-white lg:text-[56px] text-[32px] font-extrabold lg:pb-0 pb-10 ">{data.title}</div>
 					<button className="text-white text-2xl font-bold px-11 py-5 rounded-md border-2 border-white">Sign up now</button>
 				</div>
 			</Container>
 			<Container>
-				<div className="grid grid-cols-3 gap-12 z-10 relative">
+				<div className="grid lg:grid-cols-3 grid-rows-3 lg:grid-rows-1 gap-12 z-10 relative">
 					{data.items.map((item, index) => (
 						<Card item={item} key={index}/>
 					))}
