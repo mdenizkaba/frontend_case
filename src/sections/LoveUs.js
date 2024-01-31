@@ -1,22 +1,25 @@
 'use client';
 
-import { use, useEffect,useState,useRef,memo } from "react";
+import { useEffect,useState,useRef,memo } from "react";
 import Container from "../components/Container";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { register } from 'swiper/element/bundle';
+import clsx from "clsx";
 register();
 
 const getContainer = () => {
-	let width = 0;
-	if (window?.innerWidth <= 640) width = 320*2;
-	else if (window?.innerWidth <= 768) width = 640;
-	else if (window?.innerWidth <= 1024) width = 768;
-	else if (window?.innerWidth <= 1280) width = 1024;
-	else if (window?.innerWidth <= 1536) width = 1280;
-	else width = 1536;
-	return (window.innerWidth-width)/4;
+  let width = 0;
+  if (typeof window !== 'undefined') {
+    if (window.innerWidth <= 640) width = 320 * 2;
+    else if (window.innerWidth <= 768) width = 640;
+    else if (window.innerWidth <= 1024) width = 768;
+    else if (window.innerWidth <= 1280) width = 1024;
+    else if (window.innerWidth <= 1536) width = 1280;
+    else width = 1536;
+  }
+  return (typeof window !== 'undefined' ? window.innerWidth - width : 0) / 4;
 };
 
 const breakpoints= {
@@ -57,6 +60,15 @@ const LoveUs = ({data}) => {
 	const swiperRef = useRef(null);
 	const [size, setSize] = useState(getContainer());
 
+	const [containerStyle, setContainerStyle] = useState({ left: 0, right: 0 });
+
+	useEffect(() => {
+    setContainerStyle({
+			left: size,
+			right:size,
+		});
+  }, [size]);
+
   useEffect(() => {
     window.addEventListener('resize', () => {
       setSize(getContainer());
@@ -93,7 +105,10 @@ const LoveUs = ({data}) => {
 			</Container>
 
 			<div className="relative w-full sm:h-[420px] h-[350px] mt-10" >
-				<div className="absolute top-0 bottom-20 bg-amber-200 " style={{left: size,right:size}} />
+				<div className={clsx(
+					"absolute top-0 bottom-20 bg-amber-200",
+					// `left-[${size}px] right-[${size}px]`,
+				)}  style={containerStyle}/>
 				<div className="sm:pt-10 pt-5 love-swiper">
 					<Swiper
 						ref={swiperRef}
