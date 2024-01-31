@@ -58,7 +58,24 @@ const Card = ({logo,text,image,name,tag}) => {
 
 const LoveUs = ({data}) => {
 	const swiperRef = useRef(null);
-	const [size, setSize] = useState(getContainer());
+	const [size, setSize] = useState();
+
+	useEffect(() => {
+		let width = 0;
+    if (window.innerWidth <= 640) width = 320 * 2;
+    else if (window.innerWidth <= 768) width = 640;
+    else if (window.innerWidth <= 1024) width = 768;
+    else if (window.innerWidth <= 1280) width = 1024;
+    else if (window.innerWidth <= 1536) width = 1280;
+    else width = 1536;
+    setSize((window.innerWidth - width) / 4);
+
+		window.addEventListener('resize', () => {
+      setSize(getContainer());
+		});
+	}, [size]);
+
+	
 
 	const [containerStyle, setContainerStyle] = useState({ left: 0, right: 0 });
 
@@ -68,12 +85,6 @@ const LoveUs = ({data}) => {
 			right:size,
 		});
   }, [size]);
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setSize(getContainer());
-		});
-  }, []);
 
   const onNext = ()=>{
 		swiperRef.current.swiper.slideNext();
