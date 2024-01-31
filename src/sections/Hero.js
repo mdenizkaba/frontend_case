@@ -43,7 +43,7 @@ const HeroBottom = ({data}) => {
 	return (  
 		<div className="relative md:bg-transparent bg-amber-100">
 			<Container>
-				<div class="flex md:flex-row flex-col xl:gap-20 lg:gap-16 gap-8 py-20 sm:px-0 px-6 ">
+				<div className="flex md:flex-row flex-col xl:gap-20 lg:gap-16 gap-8 py-20 sm:px-0 px-6 ">
 					{
 						data.map((card, index) => (
 							<HeroCard key={index} icon={card.icon} title={card.title} description={card.description}/>
