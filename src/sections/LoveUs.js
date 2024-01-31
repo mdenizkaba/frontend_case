@@ -9,19 +9,6 @@ import { register } from 'swiper/element/bundle';
 import clsx from "clsx";
 register();
 
-const getContainer = () => {
-  let width = 0;
-  if (typeof window !== 'undefined') {
-    if (window.innerWidth <= 640) width = 320 * 2;
-    else if (window.innerWidth <= 768) width = 640;
-    else if (window.innerWidth <= 1024) width = 768;
-    else if (window.innerWidth <= 1280) width = 1024;
-    else if (window.innerWidth <= 1536) width = 1280;
-    else width = 1536;
-  }
-  return (typeof window !== 'undefined' ? window.innerWidth - width : 0) / 4;
-};
-
 const breakpoints= {
 	320: {
 		slidesPerView: 1.3,
@@ -58,33 +45,6 @@ const Card = ({logo,text,image,name,tag}) => {
 
 const LoveUs = ({data}) => {
 	const swiperRef = useRef(null);
-	const [size, setSize] = useState();
-
-	useEffect(() => {
-		let width = 0;
-    if (window.innerWidth <= 640) width = 320 * 2;
-    else if (window.innerWidth <= 768) width = 640;
-    else if (window.innerWidth <= 1024) width = 768;
-    else if (window.innerWidth <= 1280) width = 1024;
-    else if (window.innerWidth <= 1536) width = 1280;
-    else width = 1536;
-    setSize((window.innerWidth - width) / 4);
-
-		window.addEventListener('resize', () => {
-      setSize(getContainer());
-		});
-	}, [size]);
-
-	
-
-	const [containerStyle, setContainerStyle] = useState({ left: 0, right: 0 });
-
-	useEffect(() => {
-    setContainerStyle({
-			left: size,
-			right:size,
-		});
-  }, [size]);
 
   const onNext = ()=>{
 		swiperRef.current.swiper.slideNext();
@@ -116,10 +76,11 @@ const LoveUs = ({data}) => {
 			</Container>
 
 			<div className="relative w-full sm:h-[420px] h-[350px] mt-10" >
-				<div className={clsx(
-					"absolute top-0 bottom-20 bg-amber-200",
-					// `left-[${size}px] right-[${size}px]`,
-				)}  style={containerStyle}/>
+
+			<div className="container mx-auto absolute top-0 left-0 right-0  h-full">
+				<div className="absolute top-0 -left-4 -right-4 bottom-10 bg-amber-200 sm:h-[420px] h-[350px]"/>
+			</div>
+				
 				<div className="sm:pt-10 pt-5 love-swiper">
 					<Swiper
 						ref={swiperRef}
